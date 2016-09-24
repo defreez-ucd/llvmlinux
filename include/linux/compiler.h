@@ -514,8 +514,7 @@ static __always_inline void __write_once_size(volatile void *p, void *res, int s
  * supplied condition is *false*, emitting the supplied error message if the
  * compiler has support to do so.
  */
-#define compiletime_assert(condition, msg) \
-	_compiletime_assert(condition, msg, __compiletime_assert_, __LINE__)
+#define compiletime_assert(condition, msg) do { } while(0)
 
 #define compiletime_assert_atomic_type(t)				\
 	compiletime_assert(__native_word(t),				\
