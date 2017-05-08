@@ -46,7 +46,7 @@ endif
 #
 #    https://gcc.gnu.org/bugzilla/show_bug.cgi?id=53383
 #
-KBUILD_CFLAGS += -mno-sse -mno-mmx -mno-sse2 -mno-3dnow
+KBUILD_CFLAGS += -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -O2
 KBUILD_CFLAGS += $(call cc-option,-mno-avx,)
 
 ifeq ($(CONFIG_X86_32),y)
