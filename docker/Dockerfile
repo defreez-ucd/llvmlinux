@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 RUN apt-get -y update
 
 # We use sudo so that the syzkaller create-image.sh script works
-RUN apt-get install -y git gcc build-essential clang-3.8 python-pip bc libncurses5-dev llvm-3.8 time
+RUN apt-get install -y git gcc build-essential clang-3.8 python-pip bc libncurses5-dev llvm-3.8 time libssl-dev
 RUN cd /root && git clone https://github.com/travitch/whole-program-llvm.git
 RUN cd /root/whole-program-llvm && pip install wllvm
 RUN ln -s /usr/bin/clang-3.8 /usr/bin/clang

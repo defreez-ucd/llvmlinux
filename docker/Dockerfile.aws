@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 # IMPORTANT: scripts need to symlink clang-3.6 and llvm-link 3.6 in order to create 3.6 bitcode files
 # 3.8 is active by default 
 
-RUN apt-get -y update && apt-get install -y git gcc build-essential clang-3.8 python-pip bc libncurses5-dev llvm-3.8 llvm-3.6 clang-3.6 curl unzip time
+RUN apt-get -y update && apt-get install -y git gcc build-essential clang-3.8 python-pip bc libncurses5-dev llvm-3.8 llvm-3.6 clang-3.6 curl unzip time libssl-dev
 RUN cd /root && git clone https://github.com/travitch/whole-program-llvm.git
 RUN cd /root/whole-program-llvm && pip install wllvm
 RUN ln -s /usr/bin/clang-3.8 /usr/bin/clang \
